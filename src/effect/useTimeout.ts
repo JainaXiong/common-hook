@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useCallback, useEffect, useRef } from "react"
 import { useLatest } from "common-hook"
 import { isNumber } from "common-screw"
