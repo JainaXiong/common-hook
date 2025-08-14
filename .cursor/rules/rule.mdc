@@ -1,0 +1,92 @@
+<!--
+ * @Author: Jaina Xiong
+ * @Email: 17761608@qq.com
+ * @Date: 2025-08-14 17:18:56
+ * @LastEditors: Jaina Xiong
+ * @LastEditTime: 2025-08-14 17:19:02
+-->
+
+# Common Hook 项目编码规范
+
+## 代码风格
+
+### TypeScript 规范
+
+- 使用 TypeScript 严格模式 (`strict: true`)
+- 目标版本：ES6
+- 模块系统：ES2015
+- 强制文件名大小写一致性
+- 启用 ES 模块互操作性
+
+### 函数定义
+
+- 优先使用箭头函数
+- 使用 `const` 声明函数
+- 函数参数使用类型注解
+- 避免使用 `any` 类型，优先使用具体类型
+
+### 导入导出
+
+- 使用 ES6 模块语法 (`import`/`export`)
+- 优先使用命名导出
+- 在 `src/index.ts` 中统一导出所有模块
+
+### 注释规范
+
+- 使用 JSDoc 风格的注释
+- 包含 `@name`、`@description`、`@example` 标签
+- 注释使用中文描述
+- 示例代码要清晰易懂
+
+### 代码结构
+
+- 每个 Hook 文件包含一个主要的 Hook 函数
+- 使用 `useMemo` 优化性能
+- 合理使用依赖数组
+- 遵循 React Hooks 的使用规则
+
+### 命名规范
+
+- 文件名使用 camelCase
+- Hook 函数名以 `use` 开头
+- 变量名使用 camelCase
+- 类型名使用 PascalCase
+
+### 错误处理
+
+- 添加必要的类型检查
+- 使用可选链操作符 (`?.`)
+- 提供合理的默认值
+
+### 性能优化
+
+- 使用 `useLatest` 避免闭包问题
+- 合理使用 `useMemo` 和 `useCallback`
+- 避免不必要的重新渲染
+
+### 测试规范
+
+- 使用 Jest 进行单元测试
+- 测试文件命名：`*.test.ts` 或 `*.spec.ts`
+- 提供完整的测试覆盖率
+
+### Git 提交规范
+
+- 提交信息格式：`type(scope): description`
+- 类型包括：feat、fix、docs、style、refactor、test、chore
+- 范围：对应模块名称（如 state、dom、effect 等）
+- 描述：简洁明了的中文描述
+
+### 文件组织
+
+- 按功能模块组织代码
+- 工具函数放在 `_utils` 目录
+- 类型定义放在 `typings` 目录
+- 每个模块都有独立的 `index.ts` 文件
+
+### 依赖管理
+
+- 使用 pnpm 作为包管理器
+- 最小化外部依赖
+- 定期更新依赖版本
+- 使用 `sideEffects: false` 优化打包
